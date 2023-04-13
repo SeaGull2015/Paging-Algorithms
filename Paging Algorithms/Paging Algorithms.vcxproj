@@ -141,6 +141,9 @@
   <ItemGroup>
     <ClCompile Include="Paging Algorithms.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="page.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
