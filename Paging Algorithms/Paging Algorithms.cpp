@@ -101,7 +101,7 @@ int LRU(int availablePages, std::string refstr) {
             std::cout << v[i].getId() << " ";
         }
         std::cout << "\n";
-        std::cout << "Putting page by id " << currPage.getId() << '\n';
+        std::cout << "Putting page by id, last called " << currPage.getId() << ";" << currPage.getLastCalled() << '\n';
         //
 
         if (alreadyThere) {
@@ -169,7 +169,7 @@ int NFU(int availablePages, std::string refstr) {
             std::cout << v[i].getId() << " ";
         }
         std::cout << "\n";
-        std::cout << "Putting page by id " << currPage.getId() << '\n';
+        std::cout << "Putting page by id, uses " << currPage.getId() << ";" << currPage.getUses() << '\n';
         //
 
         if (alreadyThere) {
@@ -205,6 +205,12 @@ int main()
 {
     int availablePages = 4;
     std::string refstr = "012301401234"; 
+    /*std::cout << "Enter availablePages:\n";
+    std::cin >> availablePages;
+    std::cout << "Enter reference string:\n";
+    std::cin >> refstr;*/
+    std::cout << "Pagefaults:" << FIFO(availablePages, refstr) << '\n';
+    std::cout << "Pagefaults:" << LRU(availablePages, refstr) << '\n';
     std::cout << "Pagefaults:" << NFU(availablePages, refstr) << '\n';
     std::cout << "Hello World!\n";
 }
